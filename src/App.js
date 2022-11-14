@@ -1,16 +1,6 @@
 import { React } from 'react';
 import './App.scss';
-
-const compensations = [
-	{
-		name: 'A',
-		amount: 200,
-	},
-	{
-		name: 'B',
-		amount: 300,
-	},
-];
+import compensations from './service/data';
 
 const App = () => {
 	const lines = compensations.map(({ name, amount }, key) =>
