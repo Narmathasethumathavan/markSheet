@@ -1,6 +1,6 @@
 const compensations = [
 	{
-		name: 'A',
+		name: 'Narmatha',
 		amount: 200,
 	},
 	{
