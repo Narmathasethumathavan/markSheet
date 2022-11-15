@@ -4,27 +4,38 @@ import { React } from 'react';
 import marksheet from '../service/marksheet';
 
 const rowStyle = {
-	background: 'PaleGoldenRod',
-	borderTop: '1px double navy',
+	background: 'Lavender',
+	borderTop: '1px double MidnightBlue',
 	height: '55px',
 	fontSize: '18px',
-	color: 'Navy',
+	color: 'black',
 	fontFamily: 'Times New Roman',
 	textAlign: 'center',
 };
 
-const columnStyle = {
+const textColumnStyle = {
 	display: 'inline-block',
-	border: '1px solid black',
+	border: '1px solid Navy',
 	width: '150px',
+	textAlign: 'left',
+	height: '30px',
+	paddingLeft: '5px',
 };
+
+const numberColumnStyle = {
+	...textColumnStyle,
+	paddingRight: '5px',
+	textAlign: 'right',
+	fontStyle: 'bold',
+};
+
 const titleStyle = {
-	background: 'PaleGoldenRod',
-	borderTop: '2px double Teal',
-	height: '50px',
-	color: 'Navy',
+	background: 'Lavender',
+	borderTop: '2px double MidnightBlue',
+	height: '70px',
+	color: 'black',
 	fontFamily: 'Times New Roman',
-	paddingLeft: '15px',
+	paddingLeft: '5px',
 	fontSize: '25px',
 	wordSpacing: '80px',
 };
@@ -35,20 +46,19 @@ const SimpleStyles = () => {
 			key={ key }
 			style={ rowStyle }
 		>
-			<span style={ columnStyle }>{ rollno }</span>
-			<span style={ columnStyle }>{ name}</span>
-			<span style={ columnStyle }>{tamil}</span>
-			<span style={ columnStyle }>{english}</span>
-			<span style={ columnStyle }>{maths}</span>
-			<span style={ columnStyle }>{science}</span>
-			<span style={ columnStyle }>{social}</span>
+			<span style={ numberColumnStyle }>{ rollno }</span>
+			<span style={ textColumnStyle }>{ name}</span>
+			<span style={ numberColumnStyle }>{tamil}</span>
+			<span style={ numberColumnStyle }>{english}</span>
+			<span style={ numberColumnStyle }>{maths}</span>
+			<span style={ numberColumnStyle }>{science}</span>
+			<span style={ numberColumnStyle }>{social}</span>
 
 		</div>);
 
 	return <div>
 		<h1> Marksheets </h1>
-		<div style={ titleStyle }>Rollno Name Tamil English Maths Science Social</div>
-		<div>{student} </div>
+		<div style={ titleStyle }>Rollno Name Tamil English Maths Science Social {student}</div>
 	</div>;
 };
 
