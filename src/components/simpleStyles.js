@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 /* eslint-disable max-len */
 /* eslint-disable indent */
 import { React } from 'react';
@@ -30,14 +31,16 @@ const numberColumnStyle = {
 };
 
 const titleStyle = {
+
 	background: 'Lavender',
 	borderTop: '2px double MidnightBlue',
 	height: '70px',
 	color: 'black',
 	fontFamily: 'Times New Roman',
-	paddingLeft: '5px',
+	paddingLeft: '.1px',
 	fontSize: '25px',
-	wordSpacing: '80px',
+	wordSpacing: '500px',
+
 };
 
 const SimpleStyles = () => {
@@ -58,7 +61,16 @@ const SimpleStyles = () => {
 
 	return <div>
 		<h1> Marksheets </h1>
-		<div style={ titleStyle }>Rollno Name Tamil English Maths Science Social {student}</div>
+		<div style={ titleStyle }>
+			<span style={ textColumnStyle }> Rollno </span>
+			<span style={ textColumnStyle }> Name </span>
+			<span style={ textColumnStyle }>Tamil</span>
+			<span style={ textColumnStyle }>English</span>
+			<span style={ textColumnStyle }>Maths</span>
+			<span style={ textColumnStyle }>Science</span>
+			<span style={ textColumnStyle }>Social</span>
+		</div>
+		<div>{student}</div>
 	</div>;
 };
 
