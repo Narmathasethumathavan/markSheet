@@ -1,7 +1,33 @@
 .App {
 	text-align: center;
 
-	button {
-		font-weight: bold;
-	}
+}
+.tableStyle {
+	background: lavender;
+	width: 1000px;
+	height: 480px;
+	border-collapse: collapse;
+	text-align: center;
+	margin: auto;
+}
+.thStyle {
+	border: 2px solid black;
+	height: 40px;
+	font-size: 20px;
+}
+.columnStyle {
+	border: 2px solid black;
+	text-align: right;
+	padding-right: 5px;
+	font-style: TimesNewRoman;
+
+}
+
+.texttdStyle {
+	border: 2px solid black;
+	text-align: right;
+	padding-right: 5px;
+	font-style: TimesNewRoman;
+	text-align: left;
+	padding-left: 5px;
 }

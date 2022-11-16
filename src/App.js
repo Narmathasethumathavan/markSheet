@@ -3,7 +3,7 @@ import './App.scss';
 import StudentTable from './components/tableStyles';
 
 const App = () => <div className="App" role="App">
-	<StudentTable/>;
+	<StudentTable/>
 </div>;
 
 export default App;
