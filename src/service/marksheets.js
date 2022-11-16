@@ -1,4 +1,4 @@
-const marksheet = [
+const marksheets = [
 	{
 		rollno: 1,
 		name: 'A',
@@ -118,4 +118,4 @@ const marksheet = [
 	},
 ];
 
-export default marksheet;
+export default marksheets;

@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 /* eslint-disable indent */
 import { React } from 'react';
-import marksheet from '../service/marksheet';
+import marksheet from '../service/marksheets';
 
 const rowStyle = {
 	background: 'Lavender',
