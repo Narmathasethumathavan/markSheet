@@ -1,9 +1,9 @@
 import { React } from 'react';
 import './App.scss';
-import SimpleStyles from './components/simpleStyles';
+import TableStyles from './components/tableStyles';
 
 const App = () => <div className="App" role="App">
-	<SimpleStyles/>;
+	<TableStyles/>;
 </div>;
 
 export default App;
