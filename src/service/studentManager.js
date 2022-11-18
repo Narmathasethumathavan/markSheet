@@ -18,12 +18,10 @@ const getResult = (student) => {
 };
 const getRank = (finalMarksheets) => {
 	const sortedArr = finalMarksheets.sort((a, b) => b.total - a.total);
-
-	let rank = 0;
-	// eslint-disable-next-line no-return-assign
+	let rank = 1;
 	const processRank = sortedArr.map((studentData) => ({
 		...studentData,
-		rank: studentData.result === 'pass' ? rank += 1 : '-',
+		rank: studentData.result === 'pass' ? rank++ : '-',
 	}));
 
 	return processRank;
