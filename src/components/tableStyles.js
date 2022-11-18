@@ -1,6 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import { React } from 'react';
 import marksheets from '../service/marksheets';
+import processMarkSheets from '../service/studentManager';
 
 const tableHeader = [
 	'Rollno',
@@ -11,6 +12,8 @@ const tableHeader = [
 	'Science',
 	'Social',
 	'Total',
+	'Result',
+	'Rank',
 ];
 
 const StudentTable = () =>
@@ -27,20 +30,19 @@ const StudentTable = () =>
 			</thead>
 			<tbody>
 				{
-					marksheets.map((marksheet, key) =>
+					processMarkSheets(marksheets).map((student, key) =>
 						<tr key={ key }>
-							<td className="columnStyle">{marksheet.rollno}</td>
-							<td className="texttdStyle">{marksheet.name}</td>
-							<td className="columnStyle">{marksheet.tamil}</td>
-							<td className="columnStyle">{marksheet.english}</td>
-							<td className="columnStyle">{marksheet.maths}</td>
-							<td className="columnStyle">{marksheet.science}</td>
-							<td className="columnStyle">{marksheet.social}</td>
-							<td className="columnStyle">{marksheet.tamil
-								+ marksheet.english
-								+ marksheet.maths
-								+ marksheet.science
-								+ marksheet.social}</td>
+							<td className="columnStyle">{student.rollno}</td>
+							<td className="texttdStyle">{student.name}</td>
+							<td className="columnStyle">{student.tamil}</td>
+							<td className="columnStyle">{student.english}</td>
+							<td className="columnStyle">{student.maths}</td>
+							<td className="columnStyle">{student.science}</td>
+							<td className="columnStyle">{student.social}</td>
+							<td className="columnStyle">{student.total}</td>
+							<td className="columnStyle">{student.result}</td>
+							<td className="columnStyle">{student.rank}</td>
+
 						</tr>)
 				}
 			</tbody>
