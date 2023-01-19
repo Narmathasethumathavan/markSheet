@@ -1,8 +1,7 @@
 import { React } from 'react';
-import marksheets from '../service/marksheets';
-import processMarkSheets from '../service/studentManager';
 import tableHeader from './tableHeader';
 import processStudentMark from './processStudentMark';
+import processMarkSheets from '../service/studentManager';
 
 const heading = [
 	'Rollno',
@@ -17,23 +16,23 @@ const heading = [
 	'Rank',
 ];
 
-const StudentTable = () =>
-	<div>
+const StudentTable = (context) => {
+	const { state: { stuMarkSheets }} = context;
+
+	return <div>
 		<h1>Marksheets</h1>
 		<table className="tableStyle">
 			<thead>
 				<tr>
-					{
-						heading.map(tableHeader)
-					}
+					{heading.map(tableHeader)}
 				</tr>
 			</thead>
 			<tbody>
-				{
-					processMarkSheets(marksheets).map(processStudentMark)
-				}
+				{processMarkSheets(stuMarkSheets)
+					.map(processStudentMark)}
 			</tbody>
 		</table>
 	</div>;
+};
 
 export default StudentTable;

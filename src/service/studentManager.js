@@ -1,15 +1,16 @@
-/* eslint-disable max-len */
 
 const getTotal = (student) => {
 	const { tamil, english, maths, science, social } = student;
 
-	return tamil + maths + english + science + social;
+	return Number(tamil) + Number(maths)
+	+ Number(english) + Number(science) + Number(social);
 };
 
 const getResult = (student) => {
 	const passmark = 35;
 	const result = Math.min(
-		student.tamil, student.english, student.maths, student.science, student.social
+		student.tamil, student.english,
+		student.maths, student.science, student.social
 	) >= passmark
 		? 'pass'
 		: 'fail';
@@ -33,7 +34,6 @@ const addFields = (studentmark) => ({
 	result: getResult(studentmark),
 
 });
-
 const processMarkSheets = (marksheets) => {
 	const finalMarksheets = marksheets.map(addFields);
 
